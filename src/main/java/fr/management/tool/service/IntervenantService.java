@@ -45,5 +45,14 @@ public class IntervenantService implements IntervenantInterface{
         manager.save(inter);
         return inter;
     }
+
+    @Override
+    public void deleteIntervenant(String id) {
+        manager.findById(id).orElseThrow(
+            () -> new RuntimeException("intervenant introuvable")
+        );
+        
+        manager.deleteById(id);
+    }
     
 }

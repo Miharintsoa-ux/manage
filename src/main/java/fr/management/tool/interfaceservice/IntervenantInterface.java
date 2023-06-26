@@ -9,4 +9,5 @@ public interface IntervenantInterface {
     public List<Intervenant> getIntervenants();
     public Intervenant getIntervenant(String id);
     public Intervenant updatIntervenant(String id, Intervenant intervenant);
+    public void deleteIntervenant(String id);
 }
