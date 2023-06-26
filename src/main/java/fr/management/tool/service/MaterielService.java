@@ -33,6 +33,22 @@ public class MaterielService implements MaterielInteface{
             () -> new RuntimeException("material not found")
         );
     }
+
+    @Override
+    public Materiel updateMateriel(String id, Materiel materiel) {
+        Materiel ancien = materielRepository.findById(id).orElseThrow(
+            () -> new RuntimeException("materiel not found")
+        );
+
+        ancien.setDesign(materiel.getDesign());
+        ancien.setAbout(materiel.getAbout());
+        ancien.setState(materiel.getState());
+
+        materielRepository.save(ancien);
+        return ancien;
+    }
+
+    
     
     
 }

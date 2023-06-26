@@ -9,5 +9,6 @@ public interface MaterielInteface {
     public Materiel createMateriel(Materiel materiel);
     public List<Materiel> readMateriels();
     public Materiel readById(String id);
+    public Materiel updateMateriel(String id, Materiel materiel);
     
 }
