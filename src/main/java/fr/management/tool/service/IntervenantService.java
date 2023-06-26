@@ -33,5 +33,17 @@ public class IntervenantService implements IntervenantInterface{
             () -> new RuntimeException("intevenant introuvable")
         );
     }
+
+    @Override
+    public Intervenant updatIntervenant(String id, Intervenant intervenant) {
+        Intervenant inter = manager.findById(id).orElseThrow(
+            () -> new RuntimeException("intervenant introuvable")
+        );
+
+        inter.setName(intervenant.getName());
+        inter.setTaux(intervenant.getTaux());
+        manager.save(inter);
+        return inter;
+    }
     
 }
