@@ -48,6 +48,16 @@ public class MaterielService implements MaterielInteface{
         return ancien;
     }
 
+    @Override
+    public void deleteMateriel(String id) {
+        Materiel materiel = materielRepository.findById(id).orElseThrow(
+            () -> new RuntimeException("materiel not found")
+        );
+
+        if(materiel != null)
+            materielRepository.deleteById(id);
+    }
+
     
     
     

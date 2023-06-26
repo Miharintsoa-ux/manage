@@ -10,5 +10,6 @@ public interface MaterielInteface {
     public List<Materiel> readMateriels();
     public Materiel readById(String id);
     public Materiel updateMateriel(String id, Materiel materiel);
+    public void deleteMateriel(String id);
     
 }
