@@ -8,5 +8,6 @@ import fr.management.tool.entity.Materiel;
 public interface MaterielInteface {
     public Materiel createMateriel(Materiel materiel);
     public List<Materiel> readMateriels();
+    public Materiel readById(String id);
     
 }

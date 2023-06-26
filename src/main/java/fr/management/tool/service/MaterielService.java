@@ -26,6 +26,13 @@ public class MaterielService implements MaterielInteface{
     public List<Materiel> readMateriels() {
         return materielRepository.findAll();
     }
+
+    @Override
+    public Materiel readById(String id) {
+        return materielRepository.findById(id).orElseThrow(
+            () -> new RuntimeException("material not found")
+        );
+    }
     
     
 }
