@@ -1,5 +1,7 @@
 package fr.management.tool.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import fr.management.tool.entity.Materiel;
@@ -18,6 +20,11 @@ public class MaterielService implements MaterielInteface{
     @Override
     public Materiel createMateriel(Materiel materiel) {
         return materielRepository.save(materiel);
+    }
+
+    @Override
+    public List<Materiel> readMateriels() {
+        return materielRepository.findAll();
     }
     
     
