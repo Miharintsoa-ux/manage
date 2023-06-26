@@ -1,5 +1,7 @@
 package fr.management.tool.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import fr.management.tool.entity.Intervenant;
@@ -18,6 +20,11 @@ public class IntervenantService implements IntervenantInterface{
     @Override
     public Intervenant createIntervenant(Intervenant intervenant) {
         return manager.save(intervenant);
+    }
+
+    @Override
+    public List<Intervenant> getIntervenants() {
+        return manager.findAll();
     }
     
 }

@@ -1,7 +1,10 @@
 package fr.management.tool.interfaceservice;
 
+import java.util.List;
+
 import fr.management.tool.entity.Intervenant;
 
 public interface IntervenantInterface {
-    public Intervenant createIntervenant(Intervenant intervenant);    
+    public Intervenant createIntervenant(Intervenant intervenant);   
+    public List<Intervenant> getIntervenants(); 
 }
