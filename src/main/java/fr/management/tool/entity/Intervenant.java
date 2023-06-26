@@ -1,8 +1,13 @@
 package fr.management.tool.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -20,5 +25,8 @@ public class Intervenant {
 
     @Column(name = "tauxHoraire")
     private long taux;
+
+    @OneToMany(mappedBy = "intervenant", cascade = CascadeType.ALL)
+    private Set<Entretien> entretien = new HashSet<>();
     
 }
