@@ -56,6 +56,6 @@ public class MaterielController {
         @PathVariable("id") String id){
         service.deleteMateriel(id);
         return new ResponseEntity<String>("materiel deleted", HttpStatus.OK);
-    } 
+    }
     
 }
