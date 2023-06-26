@@ -6,5 +6,6 @@ import fr.management.tool.entity.Intervenant;
 
 public interface IntervenantInterface {
     public Intervenant createIntervenant(Intervenant intervenant);   
-    public List<Intervenant> getIntervenants(); 
+    public List<Intervenant> getIntervenants();
+    public Intervenant getIntervenant(String id);
 }

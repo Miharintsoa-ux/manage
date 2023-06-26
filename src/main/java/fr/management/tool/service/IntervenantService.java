@@ -26,5 +26,12 @@ public class IntervenantService implements IntervenantInterface{
     public List<Intervenant> getIntervenants() {
         return manager.findAll();
     }
+
+    @Override
+    public Intervenant getIntervenant(String id) {
+        return manager.findById(id).orElseThrow(
+            () -> new RuntimeException("intevenant introuvable")
+        );
+    }
     
 }
