@@ -8,4 +8,6 @@ public interface EntretienInterface {
     public Entretien addEntretien(Entretien entretien);    
     public List<Entretien> getEntretiens();
     public Entretien getEntretien(long id);
+    public Entretien updateEntretien(long id, Entretien newEntretien);
+
 }

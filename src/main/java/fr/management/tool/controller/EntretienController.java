@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,6 +44,17 @@ public class EntretienController {
     public Entretien ObtainEntretien(
         @PathVariable("id") long id){
         return service.getEntretien(id);
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Entretien> updateEntretien(
+        @PathVariable("id") long id, 
+         @RequestBody Entretien entretien){
+
+            return new ResponseEntity<Entretien>(
+                service.updateEntretien(id, entretien),
+                HttpStatus.OK);
+
     }
     
 }
