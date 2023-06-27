@@ -9,5 +9,6 @@ public interface EntretienInterface {
     public List<Entretien> getEntretiens();
     public Entretien getEntretien(long id);
     public Entretien updateEntretien(long id, Entretien newEntretien);
+    public void deleteEntretien(long id);
 
 }

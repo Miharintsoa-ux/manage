@@ -3,6 +3,8 @@ package fr.management.tool.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.swing.text.html.Option;
+
 import org.springframework.stereotype.Service;
 
 import fr.management.tool.entity.Entretien;
@@ -67,6 +69,16 @@ public class EntretienService implements EntretienInterface {
 
         manager.save(entretien);
         return entretien;
+    }
+
+    @Override
+    public void deleteEntretien(long id) {
+        manager.findById(id).orElseThrow(
+            () -> new RuntimeException("entretien inexistant")
+        );
+
+        manager.deleteById(id);
+        
     }
     
 }
