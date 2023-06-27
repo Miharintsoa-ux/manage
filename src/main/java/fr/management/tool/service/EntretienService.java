@@ -1,5 +1,7 @@
 package fr.management.tool.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import fr.management.tool.entity.Entretien;
@@ -18,6 +20,11 @@ public class EntretienService implements EntretienInterface {
     @Override
     public Entretien addEntretien(Entretien entretien) {
         return manager.save(entretien);
+    }
+
+    @Override
+    public List<Entretien> getEntretiens() {
+        return manager.findAll();
     }
     
 }
