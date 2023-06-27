@@ -26,5 +26,12 @@ public class EntretienService implements EntretienInterface {
     public List<Entretien> getEntretiens() {
         return manager.findAll();
     }
+
+    @Override
+    public Entretien getEntretien(long id) {
+        return manager.findById(id).orElseThrow(
+            () -> new RuntimeException("entretien not found")
+        );
+    }
     
 }
