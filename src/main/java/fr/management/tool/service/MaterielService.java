@@ -36,16 +36,18 @@ public class MaterielService implements MaterielInteface{
 
     @Override
     public Materiel updateMateriel(String id, Materiel materiel) {
-        Materiel ancien = materielRepository.findById(id).orElseThrow(
+        return materielRepository.findById(id).map( ancien -> {
+            ancien.setDesign(materiel.getDesign());
+            ancien.setAbout(materiel.getAbout());
+            ancien.setState(materiel.getState());
+
+            return materielRepository.save(ancien);
+        }
+            
+        ).orElseThrow(
             () -> new RuntimeException("materiel not found")
         );
 
-        ancien.setDesign(materiel.getDesign());
-        ancien.setAbout(materiel.getAbout());
-        ancien.setState(materiel.getState());
-
-        materielRepository.save(ancien);
-        return ancien;
     }
 
     @Override
