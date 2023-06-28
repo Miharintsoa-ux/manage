@@ -11,5 +11,6 @@ public interface MaterielInteface {
     public Materiel readById(String id);
     public Materiel updateMateriel(String id, Materiel materiel);
     public void deleteMateriel(String id);
+    public List<?> compteState();
     
 }

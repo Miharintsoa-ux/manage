@@ -57,5 +57,10 @@ public class MaterielController {
         service.deleteMateriel(id);
         return new ResponseEntity<String>("materiel deleted", HttpStatus.OK);
     }
+
+    @GetMapping("/state")
+    public List<?> getStateCompte(){
+        return service.compteState();
+    }
     
 }

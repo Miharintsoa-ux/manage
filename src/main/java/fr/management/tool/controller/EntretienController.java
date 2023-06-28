@@ -66,7 +66,6 @@ public class EntretienController {
                 "entretien deleted", 
                 HttpStatus.OK);
 
-
     }
     
 }

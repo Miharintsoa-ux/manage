@@ -60,6 +60,11 @@ public class MaterielService implements MaterielInteface{
             materielRepository.deleteById(id);
     }
 
+    @Override
+    public List<?> compteState() {
+        return materielRepository.findStateCount();
+    }
+
     
     
     
