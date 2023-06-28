@@ -2,9 +2,6 @@ package fr.management.tool.service;
 
 import java.util.List;
 import java.util.Optional;
-
-import javax.swing.text.html.Option;
-
 import org.springframework.stereotype.Service;
 
 import fr.management.tool.entity.Entretien;
