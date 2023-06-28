@@ -35,7 +35,8 @@ return values:
 		"etat": "MAUVAIS",
 		"compte": 1
 	}
-]```
+]
+```
 
 ## Intervenant
 - http://localhost:8080/intervenant/create
