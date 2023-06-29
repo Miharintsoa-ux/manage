@@ -1,5 +1,5 @@
 ## Materiel
-- http://localhost:8080/materiel/create
+- post : http://localhost:8080/materiel/create
 
 body's example:
 ```
@@ -10,9 +10,9 @@ body's example:
         "state": "BON"
     }
 ```
-- http://localhost:8080/materiel/read
-- http://localhost:8080/materiel/read/{id}
-- http://localhost:8080/materiel/update/{id}
+- get  http://localhost:8080/materiel/read
+- get  http://localhost:8080/materiel/read/{id}
+- put http://localhost:8080/materiel/update/{id}
 
 body's example:
 ```
@@ -22,8 +22,8 @@ body's example:
         "state": "BON"
     }
 ```
-- http://localhost:8080/materiel/delete/{id}
-- http://localhost:8080/materiel/state
+- delete http://localhost:8080/materiel/delete/{id}
+- get http://localhost:8080/materiel/state
 
 return values:
 ```[
@@ -39,7 +39,7 @@ return values:
 ```
 
 ## Intervenant
-- http://localhost:8080/intervenant/create
+- post : http://localhost:8080/intervenant/create
   
   requestBody :
     ```
@@ -49,9 +49,9 @@ return values:
             "taux": 10
         }
     ```
-- http://localhost:8080/intervenant/read
-- http://localhost:8080/intervenant/read/{id}
-- http://localhost:8080/intervenant/update/{id}
+- get : http://localhost:8080/intervenant/read
+- get : http://localhost:8080/intervenant/read/{id}
+- put :  http://localhost:8080/intervenant/update/{id}
   
   requestBody :
     ```
@@ -60,10 +60,10 @@ return values:
             "taux": 10
         }
 ```
-- http://localhost:8080/intervenant/delete/{id}
+- delete : http://localhost:8080/intervenant/delete/{id}
   
 ## Entretien
-- http://localhost:8080/entretien/create
+- post : http://localhost:8080/entretien/create
   
   body's example:
 	```{
@@ -83,9 +83,9 @@ return values:
 			"entretien": []
 		}
 	}```
-- http://localhost:8080/entretien/read
-- http://localhost:8080/entretien/read/{id}
-- http://localhost:8080/entretien/update/{id}
+- get : http://localhost:8080/entretien/read
+- get : http://localhost:8080/entretien/read/{id}
+- put : http://localhost:8080/entretien/update/{id}
 
 body'example:
 ```	{
@@ -105,5 +105,5 @@ body'example:
 			"entretien": []
 		}
 	}```
-- http://localhost:8080/entretien/delete/{id}
+- delete : http://localhost:8080/entretien/delete/{id}
   
