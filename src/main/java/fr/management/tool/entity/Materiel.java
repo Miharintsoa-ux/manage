@@ -28,6 +28,9 @@ public class Materiel {
     @Column(name = "carateristiques")
     private String about;
 
+    @Column(name = "image_link")
+    private String image_link;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "etat")
     private Etat state;

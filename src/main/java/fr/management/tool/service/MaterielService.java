@@ -39,6 +39,7 @@ public class MaterielService implements MaterielInteface{
         return materielRepository.findById(id).map( ancien -> {
             ancien.setDesign(materiel.getDesign());
             ancien.setAbout(materiel.getAbout());
+            ancien.setImage_link(materiel.getImage_link());
             ancien.setState(materiel.getState());
 
             return materielRepository.save(ancien);

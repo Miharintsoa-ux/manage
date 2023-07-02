@@ -38,6 +38,7 @@ public class IntervenantService implements IntervenantInterface{
     public Intervenant updatIntervenant(String id, Intervenant intervenant) {
         return manager.findById(id).map(p -> {
             p.setName(intervenant.getName());
+            p.setImage(intervenant.getImage());
             p.setTaux(intervenant.getTaux());
 
             return manager.save(p);

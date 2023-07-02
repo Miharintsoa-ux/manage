@@ -26,6 +26,9 @@ public class Intervenant {
     @Column(name = "tauxHoraire")
     private long taux;
 
+    @Column(name = "image_link")
+    private String image;
+
     @OneToMany(mappedBy = "intervenant", cascade = CascadeType.ALL)
     private Set<Entretien> entretien = new HashSet<>();
     
