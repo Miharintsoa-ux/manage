@@ -106,4 +106,54 @@ body'example:
 		}
 	}```
 - delete : http://localhost:8080/entretien/delete/{id}
+
+
+##ENTRETIEN
+- lister les entretien(get) : http://localhost:8080/entretien/read
+- delete : http://localhost:8080/entretien/delete/{id}
+- create (post) : http://localhost:8080/entretien/create
+	body : 
+	```
+		{
+		"date": "2023-06-27",
+		"hours": 5,
+		"intervenant": {
+			"id": "I006",
+			"name": "Jean Claude",
+			"taux": 10,
+			"entretien": []
+		},
+		"materiel": {
+			"id": "M003",
+			"design": "Meizu M3S",
+			"about": "Cam 40Mp, ROM: 16GB, RAM 3GB",
+			"state": "BON",
+			"entretien": []
+		}
+	}
+	```
+
+- lecture en detail(get) : http://localhost:8080/entretien/read/{id}
+
+- update(put): http://localhost:8080/entretien/update/{id}
   
+  	body : 
+	```
+		{
+		"date": "2023-06-27",
+		"hours": 5,
+		"intervenant": {
+			"id": "I006",
+			"name": "Jean Claude",
+			"taux": 10,
+			"entretien": []
+		},
+		"materiel": {
+			"id": "M003",
+			"design": "Meizu M3S",
+			"about": "Cam 40Mp, ROM: 16GB, RAM 3GB",
+			"state": "BON",
+			"entretien": []
+		}
+	}
+	```
