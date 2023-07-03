@@ -67,5 +67,10 @@ public class EntretienController {
                 HttpStatus.OK);
 
     }
+
+    @GetMapping("/search/{month}")
+    public List<Entretien> searchByMonth(@PathVariable int month){
+        return service.findByMonth(month);
+    }
     
 }

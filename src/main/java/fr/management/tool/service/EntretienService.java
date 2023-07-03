@@ -77,5 +77,10 @@ public class EntretienService implements EntretienInterface {
         manager.deleteById(id);
         
     }
+
+    @Override
+    public List<Entretien> findByMonth(int month) {
+       return  manager.findEntretiensByMonth(month);
+    }
     
 }

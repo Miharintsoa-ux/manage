@@ -116,3 +116,6 @@ return values:
 		}
 	}
 	```
+
+- get : http://localhost:8080/entretien/search/{month}
+	month = en entier(exemple: mois de janvier = 1)

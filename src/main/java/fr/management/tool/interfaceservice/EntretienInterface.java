@@ -10,5 +10,6 @@ public interface EntretienInterface {
     public Entretien getEntretien(long id);
     public Entretien updateEntretien(long id, Entretien newEntretien);
     public void deleteEntretien(long id);
+    public List<Entretien> findByMonth(int month);
 
 }
