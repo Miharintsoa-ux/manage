@@ -66,6 +66,12 @@ public class MaterielService implements MaterielInteface{
         return materielRepository.findStateCount();
     }
 
+    @Override
+    public List<Materiel> findMateriels(String chaine) {
+        return materielRepository.findMaterielByChaine(chaine);
+    }
+
+    
     
     
     

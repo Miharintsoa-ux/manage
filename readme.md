@@ -13,6 +13,7 @@ body's example:
 - get  http://localhost:8080/materiel/read
 - get  http://localhost:8080/materiel/read/{id}
 - put http://localhost:8080/materiel/update/{id}
+- get http://localhost:8080/materiel/search/chaine/{chaine}
 
 body's example:
 ```
@@ -52,6 +53,8 @@ return values:
 - get : http://localhost:8080/intervenant/read
 - get : http://localhost:8080/intervenant/read/{id}
 - put :  http://localhost:8080/intervenant/update/{id}
+- get : http://localhost:8080/intervenant/search/chaine/{chaine}  
+	- chaine = chaine à chercher
   
   requestBody :
     ```
@@ -61,7 +64,8 @@ return values:
         }
 ```
 - delete : http://localhost:8080/intervenant/delete/{id}
-  
+
+
 ## Entretien
 - post : http://localhost:8080/entretien/create
   
@@ -108,7 +112,7 @@ body'example:
 - delete : http://localhost:8080/entretien/delete/{id}
 
 
-##ENTRETIEN
+## ENTRETIEN
 - lister les entretien(get) : http://localhost:8080/entretien/read
 - delete : http://localhost:8080/entretien/delete/{id}
 - create (post) : http://localhost:8080/entretien/create

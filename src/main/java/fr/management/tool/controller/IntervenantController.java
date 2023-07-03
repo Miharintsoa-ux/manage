@@ -37,6 +37,11 @@ public class IntervenantController {
         return service.getIntervenants();
     }
 
+    @GetMapping("/search/chaine/{chaine}")
+    public List<Intervenant> search(@PathVariable String chaine){
+        return service.findIntervenantsByChaine(chaine);
+    }
+
     @GetMapping("/read/{id}")
     public Intervenant getIntervenant(
         @PathVariable("id") String id){
@@ -60,5 +65,7 @@ public class IntervenantController {
         service.deleteIntervenant(id);
         return new ResponseEntity<String>("intervenant supprimé", HttpStatus.OK);
     }
+
+ 
     
 }

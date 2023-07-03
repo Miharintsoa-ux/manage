@@ -36,6 +36,13 @@ public class MaterielController {
     public List<Materiel> readMateriels(){
         return service.readMateriels();
     }
+
+    @GetMapping("/search/chaine/{chaine}")
+    public List<Materiel> search(
+        @PathVariable String chaine){
+        return service.findMateriels(chaine);
+    }
+    
     
 
     @GetMapping("/read/{id}")
@@ -62,5 +69,5 @@ public class MaterielController {
     public List<?> getStateCompte(){
         return service.compteState();
     }
-    
+
 }

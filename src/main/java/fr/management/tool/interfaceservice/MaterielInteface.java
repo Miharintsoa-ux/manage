@@ -12,5 +12,6 @@ public interface MaterielInteface {
     public Materiel updateMateriel(String id, Materiel materiel);
     public void deleteMateriel(String id);
     public List<?> compteState();
+    public List<Materiel> findMateriels(String chaine);
     
 }

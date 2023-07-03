@@ -56,5 +56,10 @@ public class IntervenantService implements IntervenantInterface{
         
         manager.deleteById(id);
     }
+
+    @Override
+    public List<Intervenant> findIntervenantsByChaine(String chaine) {
+        return manager.findIntervenantByChaine(chaine);
+    }
     
 }

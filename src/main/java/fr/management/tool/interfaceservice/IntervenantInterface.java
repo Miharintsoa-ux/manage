@@ -10,4 +10,5 @@ public interface IntervenantInterface {
     public Intervenant getIntervenant(String id);
     public Intervenant updatIntervenant(String id, Intervenant intervenant);
     public void deleteIntervenant(String id);
+    public  List<Intervenant> findIntervenantsByChaine(String chaine);
 }
