@@ -119,3 +119,6 @@ return values:
 
 - get : http://localhost:8080/entretien/search/{month}
 	month = en entier(exemple: mois de janvier = 1)
+
+- get : http://localhost:8080/entretien/search/{date_debut}/{dateFin}  : recherche entre deux date
+  

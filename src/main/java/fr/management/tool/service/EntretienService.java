@@ -1,5 +1,6 @@
 package fr.management.tool.service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
@@ -81,6 +82,11 @@ public class EntretienService implements EntretienInterface {
     @Override
     public List<Entretien> findByMonth(int month) {
        return  manager.findEntretiensByMonth(month);
+    }
+
+    @Override
+    public List<Entretien> findBetween(Date debut, Date fin) {
+        return manager.findBetweenDate(debut, fin);
     }
     
 }

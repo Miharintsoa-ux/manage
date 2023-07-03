@@ -1,5 +1,6 @@
 package fr.management.tool.controller;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -71,6 +72,13 @@ public class EntretienController {
     @GetMapping("/search/{month}")
     public List<Entretien> searchByMonth(@PathVariable int month){
         return service.findByMonth(month);
+    }
+
+    @GetMapping("/search/{debut}/{fin}")
+    public List<Entretien> searchEntreDate(
+        @PathVariable("debut") Date debut, 
+        @PathVariable("fin") Date fin){
+        return service.findBetween(debut, fin);
     }
     
 }
