@@ -7,19 +7,26 @@ import org.springframework.stereotype.Service;
 
 import fr.management.tool.entity.Entretien;
 import fr.management.tool.entity.Intervenant;
+import fr.management.tool.entity.Materiel;
+import fr.management.tool.enumeration.Etat;
 import fr.management.tool.interfaceservice.EntretienInterface;
 import fr.management.tool.repository.EntretienRepository;
 import fr.management.tool.repository.IntervenantRepository;
+import fr.management.tool.repository.MaterielRepository;
 
 @Service
 public class EntretienService implements EntretienInterface {
 
     private EntretienRepository manager;
     private IntervenantRepository interManager;
+    private MaterielService materielService;
 
-    public EntretienService(EntretienRepository manager, IntervenantRepository iManager) {
+    public EntretienService(EntretienRepository manager,
+                            IntervenantRepository iManager,
+                            MaterielService serviceMateriel) {
         this.manager = manager;
         this.interManager = iManager;
+        this.materielService = serviceMateriel;
     }
 
     @Override
@@ -28,6 +35,13 @@ public class EntretienService implements EntretienInterface {
         Intervenant intervenant = entretien.getIntervenant();
         String id = intervenant.getId();
         Optional<Intervenant> res = interManager.findById(id);
+
+        Materiel materiel = entretien.getMateriel();
+        materiel.setState(Etat.BON);
+        String id_materiel = materiel.getId();
+
+        materielService.updateMateriel(id_materiel, materiel);
+    
 
         if(!res.isPresent())
             interManager.save(intervenant);        
