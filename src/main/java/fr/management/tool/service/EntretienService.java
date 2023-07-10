@@ -37,10 +37,11 @@ public class EntretienService implements EntretienInterface {
         Optional<Intervenant> res = interManager.findById(id);
 
         Materiel materiel = entretien.getMateriel();
-        materiel.setState(Etat.BON);
         String id_materiel = materiel.getId();
 
-        materielService.updateMateriel(id_materiel, materiel);
+        Materiel courant = materielService.readById(id_materiel);
+        courant.setState(Etat.BON);
+        materielService.updateMateriel(id_materiel, courant);
     
 
         if(!res.isPresent())
